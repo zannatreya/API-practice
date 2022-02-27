@@ -26,10 +26,10 @@ const searchButton = () => {
         main.innerHTML = '';
         fetch(`https://deckofcardsapi.com/api/deck/new/draw/?count=${inputValue}`)
             .then(res => res.json())
-            .then(data => cardDisplay(data.cards))
+            .then(data => console.log(data.cards))
         input.value = '';
         error.innerHTML = '';
-
+        // console.log(data.cards)
     }
 
 }
@@ -56,7 +56,7 @@ const cardDisplay = (cards) => {
 }
 
 const cardDetails = (code) => {
-    console.log(code);
+    // console.log(code);
     fetch(`https://deckofcardsapi.com/api/deck/new/draw/?count=52`)
         .then(res => res.json())
         .then(data => {
